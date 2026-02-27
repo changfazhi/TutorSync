@@ -1,0 +1,161 @@
+.schedule-container {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+}
+
+.add-lesson-form {
+    margin-bottom: 16px;
+    animation: slideDown var(--transition-normal);
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.schedule-split {
+    display: grid;
+    grid-template-columns: 3fr 2fr;
+    gap: 32px;
+}
+
+.schedule-section {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.schedule-section h2 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    border-bottom: 2px solid var(--border-color);
+    padding-bottom: 8px;
+}
+
+.lesson-card {
+    background-color: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-lg);
+    padding: 20px;
+    display: flex;
+    gap: 24px;
+    align-items: center;
+    box-shadow: var(--shadow-sm);
+    transition: all var(--transition-fast);
+}
+
+.lesson-card:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+    border-color: var(--border-focus);
+}
+
+.lesson-card.past {
+    opacity: 0.85;
+    background-color: var(--bg-primary);
+}
+
+.lesson-card.past:hover {
+    transform: none;
+    box-shadow: var(--shadow-sm);
+    border-color: var(--border-color);
+}
+
+.lesson-time {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+    color: var(--text-primary);
+    min-width: 120px;
+    border-right: 1px solid var(--border-color);
+    padding-right: 16px;
+}
+
+.lesson-time svg {
+    color: var(--accent-primary);
+    margin-bottom: 2px;
+}
+
+.time-text {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+}
+
+.lesson-details {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.lesson-details h3 {
+    font-size: 1.125rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.duration-badge {
+    display: inline-block;
+    background-color: var(--bg-tertiary);
+    color: var(--text-secondary);
+    font-size: 0.75rem;
+    font-weight: 600;
+    padding: 2px 8px;
+    border-radius: var(--radius-sm);
+    width: fit-content;
+}
+
+.completed-badge {
+    background-color: var(--success-bg);
+    color: var(--success);
+    font-size: 0.75rem;
+    padding: 2px 8px;
+    border-radius: var(--radius-full);
+}
+
+.lesson-topic {
+    background-color: var(--bg-tertiary);
+    padding: 8px 12px;
+    border-radius: var(--radius-md);
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    margin-top: 4px;
+}
+
+.lesson-actions {
+    display: flex;
+    align-items: center;
+}
+
+.btn-icon {
+    color: var(--text-tertiary);
+    transition: all var(--transition-fast);
+    padding: 8px;
+    border-radius: var(--radius-full);
+}
+
+.complete-btn:hover {
+    color: var(--success);
+    background-color: var(--success-bg);
+}
+
+@media (max-width: 1024px) {
+    .schedule-split {
+        grid-template-columns: 1fr;
+    }
+}
