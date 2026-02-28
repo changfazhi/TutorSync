@@ -8,11 +8,6 @@ Freelance tutors often juggle multiple spreadsheets, calendar apps, and disjoint
 
 TutorSync solves this by providing a comprehensive, **all-in-one local dashboard**. It offers the organizational power of a premium SaaS product with the privacy, zero-latency, and offline capabilities of a local desktop application. No monthly fees, no internet connection required to check your schedule or log a lesson.
 
-## 📸 Screenshots
-
-![TutorSync Dashboard](./public/dashboard.png)
-*(A sleek, modern dashboard for managing your tutoring business)*
-
 ## 💻 Tech Stack
 
 TutorSync is built with modern, performant technologies tailored for local desktop applications:
