@@ -1,73 +1,61 @@
-# React + TypeScript + Vite
+# TutorSync
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+TutorSync is an offline-capable, desktop-first dashboard designed specifically for 1-to-1 private freelance tutors. Manage your student profiles, log lessons, track curriculum progress, analyze performance, and handle billing—all in one place, securely on your machine.
 
-Currently, two official plugins are available:
+## 🎯 What Problem It Solves
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Freelance tutors often juggle multiple spreadsheets, calendar apps, and disjointed notes to keep track of their students, schedules, and payments. Relying on cloud subscriptions can be costly and raises privacy concerns regarding student data.
 
-## React Compiler
+TutorSync solves this by providing a comprehensive, **all-in-one local dashboard**. It offers the organizational power of a premium SaaS product with the privacy, zero-latency, and offline capabilities of a local desktop application. No monthly fees, no internet connection required to check your schedule or log a lesson.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## 📸 Screenshots
 
-## Expanding the ESLint configuration
+![TutorSync Dashboard](./public/dashboard.png)
+*(A sleek, modern dashboard for managing your tutoring business)*
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## 💻 Tech Stack
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+TutorSync is built with modern, performant technologies tailored for local desktop applications:
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+*   **[Electron](https://www.electronjs.org/)** - Desktop Application Framework
+*   **[React](https://react.dev/) 19** - UI Library
+*   **[TypeScript](https://www.typescriptlang.org/)** - Static Type Checking
+*   **[Vite](https://vitejs.dev/)** - Next Generation Frontend Tooling
+*   **[Dexie.js](https://dexie.org/)** - IndexedDB wrapper for offline-capable Local Storage
+*   **[Chart.js](https://www.chartjs.org/) & react-chartjs-2** - Data Analytics and Visualizations
+*   **[Lucide React](https://lucide.dev/)** - Beautiful, consistent icons
+*   **[React Router](https://reactrouter.com/)** - Application Routing
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+## 🚀 Getting Started
+
+### Prerequisites
+- Node.js (v18 or higher)
+- npm
+
+### Installation
+
+1. Clone the repository
+2. Navigate to the project directory
+   ```bash
+   cd tutorsync
+   ```
+3. Install dependencies
+   ```bash
+   npm install
+   ```
+4. Start the development server and Electron app
+   ```bash
+   npm run start
+   ```
+
+## 🛠️ Build
+
+To build the application for production:
+
+```bash
+npm run build
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## 📝 License
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+This project is licensed under the MIT License.
